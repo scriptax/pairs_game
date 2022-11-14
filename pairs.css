@@ -1,0 +1,203 @@
+body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+#main{
+    width: 1000px;
+    height: 550px;
+    margin: 0 auto 0;
+    border-radius: 5px;
+}
+/*------Menus styling-----*/
+#menus{
+    color: white;
+    font-weight: 350;
+    font-size: larger;
+    text-align: center;
+    float: left;
+    width: 400px;
+    height: 490px;
+    padding-top: 60px;
+    border-radius: 7px;
+    background-color: rgb(23, 30, 32);
+    box-shadow: grey 5px 5px 5px;
+}
+
+#diff_list{
+    float: left;
+    margin-left: 45px;
+    margin-bottom: 20px;
+}
+#cards_list{
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+#diff_btn{
+    font-family: Tahoma;
+    width: 150px;
+    height: 40px;
+}
+
+#cards_btn{
+    font-family: Tahoma;
+    width: 150px;
+    height: 40px;
+}
+
+#diff_items{
+    color: black; 
+    border-radius: 5px;
+    background-color: rgb(226, 205, 10);
+    overflow: hidden;
+    height: 0px;
+    transition-duration: 0.5s;
+}
+#cards_items{
+    color: black;
+    border-radius: 5px;
+    background-color: rgb(226, 205, 10);
+    overflow: hidden;
+    height: 0px;
+    transition-duration: 0.5s;
+}
+.diff{
+    display: block;
+    padding: 5px 0;
+    border-radius: 5px;
+    background-color: rgb(226, 205, 10);
+}
+.diff:hover{
+    cursor: pointer;
+    background-color: rgb(196, 147, 11);
+}
+.cards{
+    display: block;
+    padding: 5px 0;
+    border-radius: 5px;
+    background-color: rgb(226, 205, 10);
+}
+.cards:hover{
+    cursor: pointer;
+    background-color: rgb(196, 147, 11);
+}
+button{
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: rgb(246, 255, 116);
+    width: 150px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+}
+button:hover{cursor: pointer;}
+#rst_game:active{
+    background-color: rgb(226, 205, 10);
+    font-size: 17px;
+    width: 146px;
+    height: 38px;
+}
+#status{clear: both;}
+#ready{
+    font-weight: bold;
+    color: rgb(47, 177, 112);
+    display: none;
+}
+/*------Cards styling-----*/
+#cards_grid{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 100%;
+    visibility: hidden;
+}
+#cards_grid > div{
+    font-size: 62px;
+    margin: 5px 5px;
+    padding-top: 15px;
+    text-align: center;
+    width: 80px;
+    height: 85px;
+    background-color: rgb(23, 30, 32);
+    border-radius: 4px;
+    box-shadow: grey 2px 4px 5px;
+    transform: rotateY(180deg);
+    transition-duration: 0.3s;
+}
+.cardContainer > span{
+    color: white;
+    font-size: 62px;
+    display: none;
+}
+#cards_grid > div:hover{cursor: pointer;}
+/*------Result styling-----*/
+#game_result{
+    background-color: rgba(0, 0, 0, 0.555);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 999;
+    text-align: center;
+    display: none;
+}
+#message{
+    color: rgb(255, 255, 255);
+    font-size: 130px;
+    margin-top: 200px;
+}
+#top_rect{
+    width: 500px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    top: 150px;
+    left: -500px;
+    animation-name: top_rect_anim;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+#bottom_rect{
+    width: 500px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    right: -500px;
+    bottom: 150px;
+    animation-name: bottom_rect_anim;
+    animation-duration: 1s;
+    animation-play-state: paused;
+}
+.win{
+    animation-name: a1;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+.lose{
+    animation-name: a2;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes a1{
+    to{
+        transform: scale(1.25,1.25);
+    }
+}
+@keyframes a2{
+    to{
+        transform: scale(0.9, 0.85);
+        color: rgb(199, 127, 127);
+    }
+}
+@keyframes top_rect_anim{
+    to{
+        transform: translate(2000px);
+    }
+}
+@keyframes bottom_rect_anim{
+    to{
+        transform: translate(-2000px);
+    }
+}

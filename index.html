@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Pairs Game</title>
+        <link rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" 
+        />
+        <link rel="stylesheet" href="pairs.css">
+    </head>
+    <body>
+    <div id="main">
+        <!--------menus------->
+        <div id="menus">
+        <h1>Pairs Game</h1>
+            <div id="diff_list">
+            <button id="diff_btn">Select difficulty</button>
+            <div id="diff_items">
+                <span class="diff">Easy</span>
+                <span class="diff">Medium</span>
+                <span class="diff">Hard</span>
+            </div>
+            </div>
+
+            <div id="cards_list">
+            <button id="cards_btn">Select cards</button>
+            <div id="cards_items">
+                <span class="cards">10 cards</span>
+                <span class="cards">20 cards</span>
+                <span class="cards">30 cards</span>
+            </div>
+            </div>
+        
+            <div id="status">
+                <span id="ready">Click any card to start!</span>
+                Time: <span id="time">0</span>
+                <br><br>
+                Lives: <span id="lives">0</span>
+                <br><br>
+                <button id="rst_game" style="visibility: hidden;">Play Again!</button>
+            </div>
+        </div>
+        <!--------cards------->
+        <div id="cards_grid">
+        </div>
+    </div>
+
+    <div id="game_result">
+        <div id="top_rect"></div>
+        <div id="message"></div>
+        <div id="bottom_rect"></div>
+    </div>
+    
+    <script src="pairs.js"></script>
+    </body>
+</html>
