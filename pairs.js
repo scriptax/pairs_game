@@ -43,6 +43,7 @@ const initGame = {
     difficulty : 0,
     initTime : 0,
     initLives : 0,
+	ready : false,
     icons : [
         "piano", "roller_skating", "smartphone", "house", "blender",
         "traffic", "fort", "face_4", "rocket", "forest", 
@@ -128,6 +129,7 @@ const initGame = {
         document.getElementById('lives').innerHTML = this.initLives;
         document.getElementById('ready').style.display = "block";
         rstButton.style.visibility = "visible";
+		this.ready = true;
     }
 }
 
@@ -145,6 +147,7 @@ const gameRun = (function(clickedCard){
     
     return function(clickedCard){
         //Initialize gameplay
+		if(!initGame.ready) return null;
         if(!gameStarted){
             cards = [...document.getElementById('cards_grid').children];
             time = initGame.initTime;
