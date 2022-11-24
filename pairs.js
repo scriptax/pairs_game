@@ -8,7 +8,7 @@ class List {
     }
     listToggle(){
         if(this.listIsClosed){
-            this.list.style.height = '110px';
+            this.list.style.height = '108px';
             this.listIsClosed = false;
         } 
         else{
